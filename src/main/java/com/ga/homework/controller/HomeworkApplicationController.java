@@ -122,10 +122,11 @@ public class HomeworkApplicationController {
     public String choose(
             @RequestParam(value = "chosen")int chosen
     ){
-        if(chosen<=0 && chosen<items.size()){
-            return items.get(chosen);
-        }
+        if(chosen>0 && chosen<items.size()){
+            return facts.get(chosen);
+        }else {
         return "enter valid value";
+        }
     }
 
     @GetMapping("/search")
